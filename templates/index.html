@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
 
@@ -6,14 +5,11 @@
 
     <meta charset="utf-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 
     <title>Car Price Predictor</title>
 
@@ -21,171 +17,165 @@
 
 <body class="bg-dark">
 
-<div class="container">
+    <div class="container">
 
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
 
-        <div class="card mt-5" style="width: 100%;">
+            <div class="card mt-5" style="width: 100%;">
 
-            <div class="card-header">
+                <div class="card-header">
 
-                <div class="col-12 text-center">
+                    <div class="col-12 text-center">
 
-                    <h1>
-                        Welcome to Car Price Predictor
-                    </h1>
+                        <h1>
+                            Welcome to Car Price Predictor
+                        </h1>
+
+                    </div>
 
                 </div>
 
-            </div>
+                <div class="card-body">
 
-            <div class="card-body">
+                    <form method="post" accept-charset="utf-8">
 
-                <form method="post" accept-charset="utf-8">
+                        <div class="col-10 form-group mx-auto text-center">
 
-                    <div class="col-10 form-group mx-auto text-center">
+                            <label>
+                                <b>Select Company:</b>
+                            </label>
 
-                        <label>
-                            <b>Select Company:</b>
-                        </label>
+                            <select class="form-control" id="company" name="company" required>
 
-                        <select class="form-control"
-                                id="company"
-                                name="company"
-                                required>
+                                {% for company in companies %}
 
-                            {% for company in companies %}
+                                <option value="{{ company }}">
+                                    {{ company }}
+                                </option>
 
-                            <option value="{{ company }}">
-                                {{ company }}
-                            </option>
+                                {% endfor %}
 
-                            {% endfor %}
+                            </select>
 
-                        </select>
+                        </div>
 
-                    </div>
+                        <div class="col-10 form-group mx-auto text-center">
 
-                    <div class="col-10 form-group mx-auto text-center">
+                            <label>
+                                <b>Select Model:</b>
+                            </label>
 
-                        <label>
-                            <b>Select Model:</b>
-                        </label>
+                            <select class="form-control" id="car_model" name="car_model" required>
 
-                        <select class="form-control"
-                                id="car_model"
-                                name="car_model"
-                                required>
+                            </select>
 
-                        </select>
+                        </div>
 
-                    </div>
+                        <div class="col-10 form-group mx-auto text-center">
 
-                    <div class="col-10 form-group mx-auto text-center">
+                            <label>
+                                <b>Select Year of Purchase:</b>
+                            </label>
 
-                        <label>
-                            <b>Select Year of Purchase:</b>
-                        </label>
+                            <select class="form-control" id="year" name="year" required>
 
-                        <select class="form-control"
-                                id="year"
-                                name="year"
-                                required>
+                                <option value="" selected disabled>
+                                    Select Year
+                                </option>
 
-                            <option value="" selected disabled>
-                                Select Year
-                            </option>
+                                {% for year in range(2005, 2021) %}
 
-                            {% for year in range(2010, 2027) %}
+                                <option value="{{ year }}">
+                                    {{ year }}
+                                </option>
 
-                            <option value="{{ year }}">
-                                {{ year }}
-                            </option>
+                                {% endfor %}
 
-                            {% endfor %}
+                            </select>
 
-                        </select>
+                        </div>
 
-                    </div>
+                        <div class="col-10 form-group mx-auto text-center">
 
-                    <div class="col-10 form-group mx-auto text-center">
+                            <label>
+                                <b>Select Fuel Type:</b>
+                            </label>
 
-                        <label>
-                            <b>Select Fuel Type:</b>
-                        </label>
+                            <select class="form-control" id="fuel_type" name="fuel_type" required>
 
-                        <select class="form-control"
-                                id="fuel_type"
-                                name="fuel_type"
-                                required>
+                                <option value="" selected disabled>
+                                    Select Fuel Type
+                                </option>
 
-                            <option value="" selected disabled>
-                                Select Fuel Type
-                            </option>
+                                {% for fuel in fuel_types %}
 
-                            {% for fuel in fuel_types %}
+                                {% if fuel == "LPG" %}
 
-                            <option value="{{ fuel }}">
-                                {{ fuel }}
-                            </option>
+                                <option value="LPG">
+                                    CNG
+                                </option>
 
-                            {% endfor %}
+                                {% else %}
 
-                        </select>
+                                <option value="{{ fuel }}">
+                                    {{ fuel }}
+                                </option>
 
-                    </div>
+                                {% endif %}
 
-                    <div class="col-10 form-group mx-auto text-center">
+                                {% endfor %}
 
-                        <label>
-                            <b>Select Number of Kilometers Travelled:</b>
-                        </label>
+                            </select>
 
-                        <select class="form-control"
-                                id="kms_driven"
-                                name="kms_driven"
-                                required>
+                        </div>
 
-                            <option value="" selected disabled>
-                                Select Kilometers Driven
-                            </option>
+                        <div class="col-10 form-group mx-auto text-center">
 
-                            {% for kms in range(0, 200001, 5000) %}
+                            <label>
+                                <b>Select Number of Kilometers Travelled:</b>
+                            </label>
 
-                            <option value="{{ kms }}">
-                                {{ "{:,}".format(kms) }} km
-                            </option>
+                            <select class="form-control" id="kms_driven" name="kms_driven" required>
 
-                            {% endfor %}
+                                <option value="" selected disabled>
+                                    Select Kilometers Driven
+                                </option>
 
-                        </select>
+                                {% for kms in range(0, 200001, 5000) %}
 
-                    </div>
+                                <option value="{{ kms }}">
+                                    {{ "{:,}".format(kms) }} km
+                                </option>
 
-                    <div class="col-10 form-group mx-auto text-center">
+                                {% endfor %}
 
-                        <button type="submit"
-                                class="btn btn-primary form-control"
-                                onclick="send_data()">
+                            </select>
 
-                            Predict Price
+                        </div>
 
-                        </button>
+                        <div class="col-10 form-group mx-auto text-center">
 
-                    </div>
+                            <button type="submit" class="btn btn-primary form-control" onclick="send_data()">
 
-                </form>
+                                Predict Price
 
-                <br>
+                            </button>
 
-                <div class="row">
+                        </div>
 
-                    <div class="col-12"
-                         style="text-align: center">
+                    </form>
 
-                        <h3>
-                            <span id="prediction"></span>
-                        </h3>
+                    <br>
+
+                    <div class="row">
+
+                        <div class="col-12" style="text-align: center">
+
+                            <h3>
+                                <span id="prediction"></span>
+                            </h3>
+
+                        </div>
 
                     </div>
 
@@ -197,120 +187,109 @@
 
     </div>
 
-</div>
+    <script>
 
-<script>
+        function load_car_models(company_id, car_model_id) {
 
-    function load_car_models(company_id, car_model_id)
-    {
+            var company = document.getElementById(company_id);
 
-        var company = document.getElementById(company_id);
+            var car_model = document.getElementById(car_model_id);
 
-        var car_model = document.getElementById(car_model_id);
+            car_model.innerHTML = "";
 
-        car_model.innerHTML = "";
+            {% for company in companies %}
 
-        {% for company in companies %}
+            if (company.value == "{{ company }}") {
 
-        if (company.value == "{{ company }}")
-        {
+                {% for model in car_models %}
 
-            {% for model in car_models %}
+                {% if company in model %}
 
-            {% if company in model %}
+                var newOption = document.createElement("option");
 
-            var newOption = document.createElement("option");
+                newOption.value = "{{ model }}";
 
-            newOption.value = "{{ model }}";
+                newOption.innerHTML = "{{ model }}";
 
-            newOption.innerHTML = "{{ model }}";
+                car_model.options.add(newOption);
 
-            car_model.options.add(newOption);
+                {% endif %}
 
-            {% endif %}
+                {% endfor %}
+
+            }
 
             {% endfor %}
 
         }
 
-        {% endfor %}
-
-    }
-
-    document.getElementById("company").addEventListener(
-        "change",
-        function()
-        {
-            load_car_models("company", "car_model");
-        }
-    );
-
-    load_car_models("company", "car_model");
-
-    function form_handler(event)
-    {
-        event.preventDefault();
-    }
-
-    function send_data()
-    {
-
-        document.querySelector('form').addEventListener(
-            'submit',
-            form_handler
-        );
-
-        var fd = new FormData(
-            document.querySelector('form')
-        );
-
-        var xhr = new XMLHttpRequest();
-
-        xhr.open(
-            'POST',
-            '/predict',
-            true
-        );
-
-        document.getElementById("prediction").innerHTML =
-            "Wait! Predicting Price...";
-
-        xhr.onreadystatechange = function()
-        {
-
-            if (xhr.readyState == XMLHttpRequest.DONE)
-            {
-
-                if (xhr.status == 200)
-                {
-
-                    document.getElementById("prediction").innerHTML =
-                        "Prediction: ₹" + xhr.responseText;
-
-                }
-                else
-                {
-
-                    document.getElementById("prediction").innerHTML =
-                        "Error! Unable to predict price.";
-
-                }
-
+        document.getElementById("company").addEventListener(
+            "change",
+            function () {
+                load_car_models("company", "car_model");
             }
+        );
 
-        };
+        load_car_models("company", "car_model");
 
-        xhr.send(fd);
+        function form_handler(event) {
+            event.preventDefault();
+        }
 
-    }
+        function send_data() {
 
-</script>
+            document.querySelector('form').addEventListener(
+                'submit',
+                form_handler
+            );
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+            var fd = new FormData(
+                document.querySelector('form')
+            );
 
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+            var xhr = new XMLHttpRequest();
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+            xhr.open(
+                'POST',
+                '/predict',
+                true
+            );
+
+            document.getElementById("prediction").innerHTML =
+                "Wait! Predicting Price...";
+
+            xhr.onreadystatechange = function () {
+
+                if (xhr.readyState == XMLHttpRequest.DONE) {
+
+                    if (xhr.status == 200) {
+
+                        document.getElementById("prediction").innerHTML =
+                            "Prediction: ₹" + xhr.responseText;
+
+                    }
+                    else {
+
+                        document.getElementById("prediction").innerHTML =
+                            "Error! Unable to predict price.";
+
+                    }
+
+                }
+
+            };
+
+            xhr.send(fd);
+
+        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 
