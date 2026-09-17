@@ -1,0 +1,41 @@
+Brand,Model,Year,Kilometers_Driven,Fuel_Type,Transmission,Owner,Mileage_kmpl,Engine_cc,Power_bhp,Seats,Price_INR
+Maruti,Swift,2018,42000,Petrol,Manual,First,19.7,1197,83,5,575000
+Maruti,Baleno,2019,35000,Petrol,Manual,First,21,1197,83,5,650000
+Maruti,Alto 800,2017,55000,Petrol,Manual,First,24.7,796,47,5,325000
+Hyundai,i20,2019,28000,Petrol,Manual,First,18.6,1197,83,5,690000
+Hyundai,Creta,2018,52000,Diesel,Manual,First,20.5,1582,126,5,1050000
+Hyundai,Verna,2017,61000,Diesel,Manual,Second,22,1582,126,5,720000
+Honda,City,2019,31000,Petrol,Manual,First,17.8,1497,117,5,920000
+Honda,Amaze,2018,45000,Diesel,Manual,First,23.8,1498,98,5,650000
+Tata,Nexon,2020,24000,Petrol,Manual,First,17.4,1199,118,5,780000
+Tata,Altroz,2021,18000,Petrol,Manual,First,19.3,1199,85,5,690000
+Toyota,Innova Crysta,2018,67000,Diesel,Manual,First,15.6,2393,148,7,1450000
+Toyota,Etios,2016,72000,Diesel,Manual,Second,23.6,1364,67,5,520000
+Mahindra,XUV500,2017,75000,Diesel,Manual,Second,15.1,2179,140,7,850000
+Mahindra,Bolero,2016,90000,Diesel,Manual,Second,16,1493,74,7,550000
+Kia,Seltos,2020,22000,Petrol,Manual,First,16.5,1497,115,5,1180000
+Renault,Kwid,2019,30000,Petrol,Manual,First,22.3,999,67,5,390000
+Ford,EcoSport,2018,48000,Diesel,Manual,First,21.7,1498,98,5,680000
+Volkswagen,Polo,2017,56000,Petrol,Manual,Second,18.2,1197,103,5,520000
+Skoda,Rapid,2018,44000,Diesel,Manual,First,21.1,1498,110,5,650000
+MG,Hector,2020,26000,Petrol,Automatic,First,14.2,1451,141,5,1450000
+Maruti,Ciaz,2019,33000,Petrol,Manual,First,20.7,1462,103,5,780000
+Hyundai,Venue,2020,27000,Petrol,Manual,First,18.2,1197,118,5,850000
+Honda,WR-V,2019,39000,Diesel,Manual,First,23.7,1498,98,5,720000
+Tata,Harrier,2019,41000,Diesel,Manual,First,16.3,1956,168,5,1350000
+Toyota,Fortuner,2018,60000,Diesel,Automatic,First,14.2,2755,174,7,2850000
+Mahindra,Thar,2021,16000,Diesel,Manual,First,15.2,2184,130,4,1450000
+Kia,Sonet,2021,19000,Petrol,Manual,First,18.4,1197,118,5,820000
+Renault,Duster,2017,68000,Diesel,Manual,Second,19.6,1461,108,5,620000
+Ford,Endeavour,2017,78000,Diesel,Automatic,Second,12.6,1996,168,7,1850000
+Volkswagen,Vento,2018,50000,Petrol,Automatic,First,16.1,1598,105,5,720000
+Skoda,Kushaq,2021,21000,Petrol,Automatic,First,17.9,1498,147,5,1250000
+Maruti,Wagon R,2018,47000,Petrol,Manual,First,22.5,1197,88,5,470000
+Hyundai,Grand i10,2017,52000,Petrol,Manual,First,18.9,1197,82,5,480000
+Honda,Jazz,2018,43000,Petrol,Manual,First,18.7,1199,89,5,560000
+Tata,Tiago,2019,36000,Petrol,Manual,First,19.8,1199,84,5,490000
+Toyota,Yaris,2019,34000,Petrol,Manual,First,17.8,1496,106,5,860000
+Mahindra,Scorpio,2018,62000,Diesel,Manual,Second,15.4,2179,120,7,920000
+Kia,Carnival,2020,29000,Diesel,Automatic,First,14.1,2199,197,7,2100000
+MG,Astor,2021,17000,Petrol,Automatic,First,15.4,1349,138,5,1350000
+Maruti,Ertiga,2019,38000,Petrol,Manual,First,19,1462,103,7,720000
